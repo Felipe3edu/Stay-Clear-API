@@ -1,27 +1,15 @@
 //importação Express
 const express = require('express')
+const routes = require('./routes')
 
 //Função Express (Definimos a Constante)
 const app = express()
+app.use(routes)
+
+app.listen(3000)
 
 //Métodos
 //get = pegar
 //put = atualizar 
 //post = postar
 //delete = deletar
-
-app.get('/users', (req, res) => {
-    return res.json({
-        usuario: 'Felipe Eduardo',
-        idade: 22,
-        amigos: ['Juliano', 'Fernando', 'Caio', 'Anderson', 'Kaique'],
-        ativo: false
-
-    }
-
-    )
-})
-
-//Identificação da Porta
-app.listen(3000)
-
