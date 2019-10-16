@@ -1,0 +1,12 @@
+const { resolve } = require('path') // caminhos Linux e Mac
+
+// Conf Sequelize
+
+
+//dirname = caminho da pasta 
+// Ex: src/config/database.js'
+module.exports = {
+    config: resolve(__dirname, 'src', 'config','database.js'),
+    'models-path': resolve (__dirname, 'src','App','models')
+    
+}

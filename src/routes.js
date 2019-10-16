@@ -1,9 +1,23 @@
 const express = require('express')
+const User = require('./app/models/User')
 
 const routes = express.Router()
 
 
 
+//GET
+//POST
+//PUT
+//DELETE
+
+routes.post('/users', async (req, res) => {
+    const user = await User.create(req.body) 
+    return res.json(user)
+    //REQ 
+    //RES  
+})
+
+//Criamos uma rota para json
 routes.get('/users', (req, res) => {
     return res.json({
         usuario: 'Felipe',
