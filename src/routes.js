@@ -1,7 +1,12 @@
 const express = require('express')
-const User = require('./app/models/User')
+//const User = require('./app/models/User')
 
 const routes = express.Router()
+
+
+
+//Nossos controllers
+const UserController = require('./App/controllers/UserController')
 
 
 

@@ -4,6 +4,8 @@ const databaseConfig = require('../config/database')
 
 //Model
 const User = require('../app/models/User')
+const Category = require('../app/models/Category')
+
 
 class Database{
     constructor(){
@@ -13,6 +15,7 @@ class Database{
     init(){
         this.conectiion = new Sequelize(databaseConfig)
         User.init(this.conectiion)
+        //Category.init(this.conectiion)
     }
 }
 
