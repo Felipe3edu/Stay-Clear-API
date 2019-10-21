@@ -7,44 +7,17 @@ const routes = express.Router()
 
 //Nossos controllers
 const UserController = require('./App/controllers/UserController')
+const AuthController = require('./App/controllers/AuthController')
 
 
-
+//Nossos Middlewares
+const AuthMiddleware = require('./App/middlewares/AuthMiddlewares')
 //GET
 //POST
 //PUT
 //DELETE
-
-routes.post('/users', async (req, res) => {
-    const user = await User.create(req.body) 
-    return res.json(user)
-    //REQ 
-    //RES  
-})
-
-//Criamos uma rota para json
-routes.get('/users', (req, res) => {
-    return res.json({
-        usuario: 'Felipe',
-        idade: 22,
-        amigos: ['Juliano', 'Fernando', 'Caio', 'Anderson', 'Kaique'],
-
-        ativo: false
-
-    }
-
-    )
-})
-
-
-routes.get('/', (req, res) => {
-    return res.send('~ ~ ~ ~ ~ ~ BEM VINDO ~ ~ ~ ~ ~ ~')
-})
-
-
-routes.get('/users/:name', (req, res) => {
-    const name = req.params.name
-    return res.send(name)
-})
-
+routes.use(AuthMiddleware)
+routes.post('/auth' ,AuthController.store)
+routes.post('/users', UserController.store)
+routes.get('/users', UserController.index)
 module.exports = routes

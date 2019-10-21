@@ -3,8 +3,8 @@ const Sequelize = require('sequelize')
 const databaseConfig = require('../config/database')
 
 //Model
-const User = require('../app/models/User')
-const Category = require('../app/models/Category')
+const User = require('../App/models/User')
+const Category = require('../App/models/Category')
 
 
 class Database{
