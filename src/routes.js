@@ -16,8 +16,10 @@ const AuthMiddleware = require('./App/middlewares/AuthMiddlewares')
 //POST
 //PUT
 //DELETE
-routes.use(AuthMiddleware)
-routes.post('/auth' ,AuthController.store)
+
 routes.post('/users', UserController.store)
+routes.post('/auth' ,AuthController.store)
+routes.use(AuthMiddleware)
 routes.get('/users', UserController.index)
+
 module.exports = routes

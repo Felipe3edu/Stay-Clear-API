@@ -16,7 +16,7 @@ class AuthController{
         }
         return res.json({
             userExists,
-            token: jwt.sign({id: userExists.id }, '753c5e1b85aa8ed55da70bd2b6b017a9', {
+            token: jwt.sign({id: userExists.id, }, '753c5e1b85aa8ed55da70bd2b6b017a9', {
             expiresIn:'7d'
         })
     })

@@ -7,8 +7,8 @@ class UserController {
         
         const user = await User.findAll({where:
         { 
-            email :{
-                [Op.ne] : 'felipe_edu37@hotmail.com'
+            id :{
+                [Op.ne] : req.userId //Substituimos a filtro de Busca (Email <== para ==> ID)
             }
         } 
     })
