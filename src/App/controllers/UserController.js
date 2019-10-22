@@ -8,17 +8,13 @@ class UserController {
         const user = await User.findAll({where:
         { 
             id :{
-                [Op.ne] : req.userId //Substituimos a filtro de Busca (Email <== para ==> ID)
+                [Op.ne] : req.userId //Substituimos o filtro de Busca (Email <== para ==> ID)
             }
         } 
     })
         return res.json(user)
         
     }
-
-
-
-
     async store(req, res) {
     
             const userExists = await User.findOne({ where: { email: req.body.email } })
