@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/Felipe3edu/Stay-Clear-API#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
     "mysql2": "^1.7.0",
     "sequelize": "^5.19.6"
